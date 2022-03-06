@@ -9,20 +9,7 @@ from AvengerMusic.Decorators.admins import AdminActual
 from AvengerMusic.Utilities.changers import (alpha_to_int, int_to_alpha,
                                       time_to_seconds)
 
-__MODULE__ = "Auth Users"
-__HELP__ = """
-**Note:**
--Auth users can skip, pause, stop, resume Voice Chats even without Admin Rights.
-/auth [Username or Reply to a Message] 
-- Add a user to AUTH LIST of the group.
-/unauth [Username or Reply to a Message] 
-- Remove a user from AUTH LIST of the group.
-/authusers 
-- Check AUTH LIST of the group.
-"""
-
-
-@app.on_message(filters.command("auth") & filters.group)
+@app.on_message(filters.command("authorize") & filters.group)
 @AdminActual
 async def auth(_, message: Message):
     if not message.reply_to_message:
@@ -91,7 +78,7 @@ async def auth(_, message: Message):
         await message.reply_text(f"Already in the Authorised Users List.")
 
 
-@app.on_message(filters.command("unauth") & filters.group)
+@app.on_message(filters.command("unauthorize") & filters.group)
 @AdminActual
 async def whitelist_chat_func(_, message: Message):
     if not message.reply_to_message:
