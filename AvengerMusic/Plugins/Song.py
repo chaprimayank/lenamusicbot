@@ -23,7 +23,7 @@ __HELP__ = """
 
 
 @app.on_message(
-    filters.command(["song", f"song@{BOT_USERNAME}"]) & filters.group
+    filters.command(["video", f"video@{BOT_USERNAME}"]) & filters.group
 )
 @PermissionCheck
 async def play(_, message: Message):
