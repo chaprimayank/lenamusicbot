@@ -15,7 +15,7 @@ __HELP__ = """
 """
 
 
-@app.on_message(filters.command("speedtest") & ~filters.edited)
+@app.on_message(filters.command("mspeedtest") & ~filters.edited)
 async def statsguwid(_, message):
     m = await message.reply_text("Running Speed test")
     try:
