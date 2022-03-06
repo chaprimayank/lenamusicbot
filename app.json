@@ -1,7 +1,7 @@
 {
   "name": "Avenger Music",
   "description": "A Telegram Music Bot with proper functions written in Python with Pyrogram and Py-Tgcalls.",
-  "repository": "https://github.com/BotsClub/AvengerMusic",
+  "repository": "https://github.com/chaprimayank/lenamusicbot",
   "logo": "https://telegra.ph/file/20dbac72dc9aca8acf150.jpg",
   "keywords": [
   "python3",
@@ -12,7 +12,7 @@
   "telegram-bot",
   "pyrogram"
   ],
-  "repository": "https://github.com/BotsClub/AvengerMusic",
+  "repository": "https://github.com/chaprimayank/lenamusicbot",
   "stack": "container",
   "env": {
     "API_ID": {
