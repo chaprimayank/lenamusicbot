@@ -27,16 +27,6 @@ from AvengerMusic.Utilities.ping import get_readable_time
 
 welcome_group = 2
 
-__MODULE__ = "Essentials"
-__HELP__ = """
-/start 
-- Start the Bot.
-/help 
-- Get Commands Helper Menu.
-/settings 
-- Get Settings button.
-"""
-
 
 @app.on_message(filters.new_chat_members, group=welcome_group)
 async def welcome(_, message: Message):
@@ -88,7 +78,7 @@ async def welcome(_, message: Message):
             return
 
 
-@app.on_message(filters.command(["helps", "starts"]) & filters.group)
+@app.on_message(filters.command(["mhelp", "mstarts"]) & filters.group)
 @PermissionCheck
 async def useradd(_, message: Message):
     out = start_pannel()
@@ -449,7 +439,7 @@ async def start_markup_check(_, CallbackQuery):
         _playlist = await get_authuser_names(CallbackQuery.message.chat.id)
         if not _playlist:
             return await CallbackQuery.edit_message_text(
-                text=f"{text}\n\nNo Authorized Users Found\n\nYou can allow any non-admin to use my admin commands by /auth and delete by using /unauth",
+                text=f"{text}\n\nNo Authorized Users Found\n\nYou can allow any non-admin to use my admin commands by /authorize and delete by using /unauthorize",
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
         else:
